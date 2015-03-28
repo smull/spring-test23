@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
     //getPrice();
-    getUpdate();
+    //getUpdate();
+    getUpdateType();
 
 
 });
@@ -23,6 +24,36 @@ function getPrice() {
             });
         });
 }
+
+
+function getUpdateType() {
+
+    console.log("222");
+
+    stockPriceMines = [];
+    stockPriceMines.push({companyName: "fff",price: 20.3, volume: 23.44});
+    stockPriceMines.push({companyName: "qwerty",price: 220.3, volume: 35.88});
+    stockPriceMines.push({companyName: "Pir",price: 100.5, volume: 54.77});
+
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "/updateType",
+        dataType: "json",
+        data: JSON.stringify(stockPriceMines),
+        success: function ( data ) {
+            $("tr").each(function (index, element) {
+                $("#" + element.companyName + "_PRICE").html(element.price);
+                $("#" + element.companyName + "_VOLUME").html(element.volume);
+            });
+        }
+    });
+
+
+
+
+}
+
 
 
 function update(data){
