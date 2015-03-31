@@ -1,4 +1,4 @@
-package com.levelup.spring.rest.resources;
+package com.levelup.spring.rest;
 
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;

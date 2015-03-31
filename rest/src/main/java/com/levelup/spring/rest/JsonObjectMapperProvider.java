@@ -1,4 +1,4 @@
-package com.levelup.spring.rest.resources;
+package com.levelup.spring.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

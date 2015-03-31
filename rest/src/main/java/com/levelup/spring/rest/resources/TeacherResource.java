@@ -24,26 +24,26 @@ import java.util.List;
 public class TeacherResource {
 
 
-    //@Autowired
+    @Autowired
     TeacherService teacherService;
 
 
-    @Context
-    ServletContext context;
-
-
-    private void initContext(){
-        if (teacherService == null) {
-            WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(context);
-            teacherService = (TeacherService) applicationContext.getBean("teacherService");
-        }
-    }
+//    @Context
+//    ServletContext context;
+//
+//
+//    private void initContext(){
+//        if (teacherService == null) {
+//            WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(context);
+//            teacherService = (TeacherService) applicationContext.getBean("teacherService");
+//        }
+//    }
 
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Teacher> getAllTeachers() {
-        initContext();
+        //initContext();
         List<Teacher> teachers = teacherService.getAllTeachers();
         return teachers;
     }
@@ -52,7 +52,7 @@ public class TeacherResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Teacher getTeacherById(@PathParam("teacherId") Long teacherId) {
-        initContext();
+        //initContext();
         Teacher teacher = teacherService.getTeacherById(teacherId);
         return teacher;
     }

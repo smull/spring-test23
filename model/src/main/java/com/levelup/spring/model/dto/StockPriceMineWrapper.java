@@ -1,7 +1,6 @@
 package com.levelup.spring.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import sun.org.mozilla.javascript.internal.json.JsonParser;
 
 import java.util.ArrayList;
