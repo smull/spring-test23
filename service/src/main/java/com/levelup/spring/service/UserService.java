@@ -1,13 +1,13 @@
-package com.levelup.spring.dao;
+package com.levelup.spring.service;
 
 import com.levelup.spring.model.user.User;
 
 import java.util.List;
 
 /**
- * Created by denis_zavadsky on 3/14/15.
+ * Created by java on 31.03.2015.
  */
-public interface UserRepository {
+public interface UserService {
 
     void createUser(User user);
 
@@ -19,5 +19,4 @@ public interface UserRepository {
     User deleteById(Long id);
 
     User update(Long id, String firstName, String lastName, Integer age);
-
 }

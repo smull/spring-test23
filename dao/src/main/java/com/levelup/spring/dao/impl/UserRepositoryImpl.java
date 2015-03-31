@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Created by denis_zavadsky on 3/14/15.
  */
-@Repository("userRepository")
+//@Repository("userRepository")
 public class UserRepositoryImpl implements UserRepository{
 
     private JdbcTemplate jdbcTemplate;
@@ -69,6 +69,17 @@ public class UserRepositoryImpl implements UserRepository{
 
     @Override
     public List<User> getAllUsers() {
+        return null;
+    }
+
+
+    @Override
+    public User deleteById(Long id) {
+        return null;
+    }
+
+    @Override
+    public User update(Long id, String firstName, String lastName, Integer age) {
         return null;
     }
 }
