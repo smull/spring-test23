@@ -11,6 +11,8 @@ public interface TeacherRepository {
 
     List<Teacher> getAllTeachers();
 
+    Teacher getTeacherById(Long id);
 
+    Teacher deleteTeacherById(Long id);
 
 }
