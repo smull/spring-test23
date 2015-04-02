@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -39,18 +40,31 @@ public class UserResource {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public User createUser(@QueryParam("id") Long id,
-                                 @QueryParam("firstName") String firstName,
-                                 @QueryParam("lastName") String lastName,
-                                 @QueryParam("age") Integer age){
-
+    public User createUser(@FormParam("id") Long id,
+                                 @FormParam("firstName") String firstName,
+                                 @FormParam("lastName") String lastName,
+                                 @FormParam("age") Integer age){
         User user = new User();
         user.setId(id);
         user.setFirstName(firstName);
         user.setLastName(lastName);
-        user.setAge(age);userService.createUser(user);
+        user.setAge(age);
+        userService.createUser(user);
         return user;
     }
+
+    @Path("/res")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response doWork(User person) {
+        try {
+            userService.createUser(person);
+            return Response.ok().build();
+        }catch (Exception e) {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
+    }
+
 
     @Path("/delete/{userId}")
     @DELETE
