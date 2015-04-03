@@ -16,12 +16,14 @@
     <!--<context:component-scan base-package="com.levelup.spring.rest.resources" />-->
 
     <bean id="teacherResource" class="com.levelup.spring.cfx.TeacherResource"></bean>
+    <bean id="userResource" class="com.levelup.spring.cfx.UserResource"></bean>
 
 
 
     <jaxrs:server id="cfxServer" address="/test">
         <jaxrs:serviceBeans>
             <ref bean="teacherResource"></ref>
+            <ref bean="userResource"></ref>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"></bean>

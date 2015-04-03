@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.awt.*;
 import java.util.List;
 
 /**
- * Created by SMULL on 3/31/2015.
+ * Created by denis_zavadsky on 3/29/15.
  */
 @Path("/teacher")
 public class TeacherResource {

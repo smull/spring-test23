@@ -9,7 +9,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:rest-cfx.xml</param-value>
+        <param-value>classpath:rest-cfx-context.xml</param-value>
     </context-param>
 
     <listener>
